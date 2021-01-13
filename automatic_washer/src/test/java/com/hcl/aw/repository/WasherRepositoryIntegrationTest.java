@@ -26,13 +26,13 @@ public class WasherRepositoryIntegrationTest {
     public void myTest() throws Exception {
 
     	WasherEntity washer = new WasherEntity();
-    	washer.setWashing_id(10);
+    	washer.setwashingId(10);
     	washer.setModel("LG");
         washer.setSerial("12M");
 
         repository.save(washer);
 
-        List<?> queryResult = repository.findByWasherId(1);
+        List<?> queryResult = repository.findBywashingId(1);
 
         assertFalse(queryResult.isEmpty());
         assertNotNull(queryResult.get(0));

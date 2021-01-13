@@ -50,7 +50,7 @@ public class WasherControllerIntegrationTest {
     @Test
     public void testGetWasherById() {
     	WasherEntity washer = restTemplate.getForObject(getRootUrl() + "/Wahser/1", WasherEntity.class);
-        System.out.println(washer.getWashing_id());
+        System.out.println(washer.getwashingId());
         assertNotNull(washer);
     }
 
@@ -59,7 +59,7 @@ public class WasherControllerIntegrationTest {
     	WasherEntity washer = new WasherEntity();
     	washer.setModel("LG");
     	washer.setSerial("121212");
-    	washer.setWashing_id(1);
+    	washer.setwashingId(1);;
         ResponseEntity<WasherEntity> postResponse = restTemplate.postForEntity(getRootUrl() + "/washer", washer, WasherEntity.class);
         assertNotNull(postResponse);
         assertNotNull(postResponse.getBody());

@@ -37,7 +37,7 @@ public class WasherController {
 	@PostMapping("/washer")
 	private int saveWasher(@RequestBody WasherEntity washer) {
 		washerService.saveOrUpdate(washer);
-		return washer.getWashing_id();
+		return washer.getwashingId();
 	}
 
 	@PutMapping("/washer")
