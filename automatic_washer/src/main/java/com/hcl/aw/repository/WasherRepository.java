@@ -13,5 +13,6 @@ public interface WasherRepository extends CrudRepository<WasherEntity, Integer> 
 	Iterable<WasherEntity> findAll();
 
 	List<WasherEntity> findBywashingId(int id);
+	
 
 }

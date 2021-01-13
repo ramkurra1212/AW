@@ -54,6 +54,7 @@ public class WasherControllerIntegrationTest {
         assertNotNull(washer);
     }
 
+    
     @Test
     public void testCreateWasher() {
     	WasherEntity washer = new WasherEntity();

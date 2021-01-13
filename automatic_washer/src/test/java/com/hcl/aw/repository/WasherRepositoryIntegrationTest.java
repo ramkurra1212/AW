@@ -22,6 +22,7 @@ public class WasherRepositoryIntegrationTest {
     @Autowired
     WasherRepository repository;
 
+    
     @Test
     public void myTest() throws Exception {
 
