@@ -22,7 +22,7 @@ import com.hcl.aw.util.States;
  */
 @Service
 @Scope("singleton")
-public class ProgramExecutorService {
+public class WasherExecutorService {
 
 	private final ExecutorService executor = Executors.newSingleThreadExecutor();
 	private Program program;

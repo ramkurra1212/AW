@@ -9,16 +9,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hcl.aw.model.WasherEntity;
+import com.hcl.aw.service.WasherExecutorService;
 import com.hcl.aw.service.WasherService;
-
+@RequestMapping(value = "/api")
 @RestController
 public class WasherController {
 
 	@Autowired
 	WasherService washerService;
+	@Autowired
+	WasherExecutorService washerExecutorService;
 
 	@GetMapping("/AllWahsers")
 	private List<WasherEntity> getAllWahsers() {
@@ -46,4 +50,18 @@ public class WasherController {
 	{  
 		washerService.delete(id);  
 	} 
+	@GetMapping("/start}")
+    public String start() throws InterruptedException {
+        try {
+        	washerExecutorService.startProgram();
+        } catch (NullPointerException e) {
+            return "Set up program first";
+        }
+        return "Started";
+    }
+	  @GetMapping("/stop}")
+	    public String stop() {
+		  washerExecutorService.stopProgram();
+	        return "Stopped";
+	    }
 }
