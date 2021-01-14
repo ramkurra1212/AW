@@ -50,6 +50,7 @@ public class WasherServiceTest {
 		// Assert.assertEquals(result.size(), listW.size());
 	}
 
+	
 	@Test
 	public void testFindBywashingId() {
 		WasherEntity washer = new WasherEntity();

@@ -31,7 +31,6 @@ public class WasherController {
 	public List<WasherEntity> getAllWahsers() {
 		return washerService.getAllWahsers();
 	}
-
 	@GetMapping("/Wahser/{washing_id}")
 	public WasherEntity getWasher(@PathVariable("washing_id") int washing_id) {
 		return washerService.getWasherById(washing_id);

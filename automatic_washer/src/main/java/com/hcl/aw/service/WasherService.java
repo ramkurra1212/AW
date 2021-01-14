@@ -6,7 +6,6 @@ import com.hcl.aw.model.WasherEntity;
 
 public interface WasherService {
 
-
 	List<WasherEntity> getAllWahsers();
 
 	WasherEntity getWasherById(int id);

@@ -37,7 +37,6 @@ public class WasherControllerIntegrationTest {
      public void contextLoads() {
 
      }
-
     // @Test
      public void testGetAllWahsers() {
      HttpHeaders headers = new HttpHeaders();

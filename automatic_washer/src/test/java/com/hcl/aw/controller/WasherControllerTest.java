@@ -37,7 +37,6 @@ public class WasherControllerTest {
 	public void setup() {
 		MockitoAnnotations.openMocks(this);
 	}
-
 	@Test
 	public void testGetAllWahsers() {
 		WasherEntity washer = new WasherEntity();
