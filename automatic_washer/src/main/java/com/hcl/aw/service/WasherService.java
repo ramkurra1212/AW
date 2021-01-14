@@ -12,6 +12,7 @@ public interface WasherService {
 	WasherEntity getWasherById(int id);
 
 	void saveOrUpdate(WasherEntity washer);
+	WasherEntity Update(WasherEntity washer);
 
 	void delete(int id);
 

@@ -42,7 +42,7 @@ public class WasherControllerIntegrationTest {
      public void testGetAllWahsers() {
      HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
-        ResponseEntity<String> response = restTemplate.exchange(getRootUrl() + "/AllWahsers",
+        ResponseEntity<String> response = restTemplate.exchange(getRootUrl() + "Wahser",
         HttpMethod.GET, entity, String.class);  
         assertNotNull(response.getBody());
     }

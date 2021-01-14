@@ -27,7 +27,7 @@ public class WasherController {
 	AtomicBoolean isWashing = new AtomicBoolean(false);
 	ReentrantLock lock = new ReentrantLock();
 
-	@GetMapping("/AllWahsers")
+	@GetMapping("/wahsers")
 	public List<WasherEntity> getAllWahsers() {
 		return washerService.getAllWahsers();
 	}

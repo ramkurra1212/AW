@@ -36,4 +36,10 @@ public class WasherServiceImpl implements WasherService {
 
 	}
 
+	@Override
+	public WasherEntity Update(WasherEntity washer) {
+		return washerRepository.save(washer); 
+		
+	}
+
 }
