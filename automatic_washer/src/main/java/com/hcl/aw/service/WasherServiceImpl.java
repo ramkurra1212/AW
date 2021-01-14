@@ -1,6 +1,5 @@
 package com.hcl.aw.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +16,7 @@ public class WasherServiceImpl implements WasherService {
 
 	@Override
 	public List<WasherEntity> getAllWahsers() {
-		List<WasherEntity> washer = new ArrayList<WasherEntity>();  
-		washerRepository.findAll().forEach(washer1 -> washer.add(washer1));  
-		return washer;  
+		return	washerRepository.findAll();
 	}
 
 	@Override

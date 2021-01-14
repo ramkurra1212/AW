@@ -3,10 +3,12 @@ package com.hcl.aw.service;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
@@ -15,11 +17,13 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 
 import com.hcl.aw.model.WasherEntity;
+import com.hcl.aw.repository.WasherRepository;
 
 
-
+@RunWith(PowerMockRunner.class)
+@PrepareForTest({WasherRepository.class})
 public class WasherControllerIntegrationTest {
-     @Autowired
+     @Mock
      private TestRestTemplate restTemplate;
 
      @LocalServerPort
@@ -29,12 +33,12 @@ public class WasherControllerIntegrationTest {
          return "http://localhost:" + port;
      }
 
-     @Test
+     @Before
      public void contextLoads() {
 
      }
 
-     //@Test
+    // @Test
      public void testGetAllWahsers() {
      HttpHeaders headers = new HttpHeaders();
         HttpEntity<String> entity = new HttpEntity<String>(null, headers);
@@ -43,7 +47,7 @@ public class WasherControllerIntegrationTest {
         assertNotNull(response.getBody());
     }
 
-    //@Test
+   // @Test
     public void testGetWasherById() {
     	WasherEntity washer = restTemplate.getForObject(getRootUrl() + "/Wahser/1", WasherEntity.class);
         System.out.println(washer.getwashingId());
@@ -51,7 +55,7 @@ public class WasherControllerIntegrationTest {
     }
 
     
-  // @Test
+ //  @Test
     public void testCreateWasher() {
     	WasherEntity washer = new WasherEntity();
     	washer.setModel("LG");
